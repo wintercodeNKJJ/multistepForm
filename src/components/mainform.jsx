@@ -14,7 +14,7 @@ const Mainform = () => {
   const [largeStore, setLargeStore] = useState(false)
   const [custom, setCustom] = useState(false)
   const [plan, setPlan] = useState(1)
-  const {watch, register,handleSubmit, setValue, formState, trigger} = useForm({ defaultValues: { user: "", email: "", phone: "" } })
+  const {watch, register,handleSubmit, setValue, formState, trigger} = useForm({ mode:'all', defaultValues: { user: "", email: "", phone: "" } })
   const {errors} = formState
   
 
@@ -43,6 +43,8 @@ const Mainform = () => {
           nextStep()
         }
       })
+    }else{
+      trigger()
     }
   }
 
@@ -128,7 +130,7 @@ const Mainform = () => {
                     <p>Phone Number</p> 
                     {errors.phone&&<p className='error'>{errors.phone.message}</p>}
                     </label>
-                  <input type="text" name="phone" id="phone" placeholder='e.g. +1 234 567 890' className={errors.phone?'error':''} {...register("phone",{required:"this field is required"})}/>
+                  <input type="number" name="phone" id="phone" placeholder='e.g. +1 234 567 890' className={errors.phone?'error':''} {...register("phone",{required:"this field is required"})}/>
                 </div>
               </div>
             </section>
@@ -144,7 +146,7 @@ const Mainform = () => {
                 <i><img src={arcad} alt="" /></i>
                 <div>
                   <p className='title'>Arcade</p>
-                  <p className='amount'>$9/mo</p>
+                  <p className='amount'>${checked === 'mo'?'9/mo':'90/yr'}</p>
                   {checked ==='yr' &&<p className='bonus'>2 month free</p>}
                 </div>
               </div>
@@ -153,7 +155,7 @@ const Mainform = () => {
                 <i><img src={advanced} alt="" /></i>
                 <div>
                   <p className='title'>Advanced</p>
-                  <p className='amount'>$12/mo</p>
+                  <p className='amount'>${checked === 'mo'?'12/mo':'120/yr'}</p>
                   {checked ==='yr' &&<p className='bonus'>2 months free</p>}
                 </div>
               </div>
@@ -162,7 +164,7 @@ const Mainform = () => {
                 <i><img src={pro} alt="" /></i>
                 <div>
                   <p className='title'>Pro</p>
-                  <p className='amount'>$15/mo</p>
+                  <p className='amount'>${checked === 'mo'?'15/mo':'150/yr'}</p>
                   {checked ==='yr' && <p className='bonus'>2 months free</p>}
                 </div>
               </div>
@@ -279,7 +281,7 @@ const Mainform = () => {
           }
           {formSteps < 5 &&
           <div className='buttons'>
-            <button type='button' className='backward' onClick={()=>backStep()}>Go Back</button>
+            <button type='button' className={formSteps >= 2?'backward':'backward opacity-0'} disabled={formSteps < 2} onClick={()=>backStep()}>Go Back</button>
             <div className='foward'>
               {formSteps < 4 &&<button className='next-btn' type='button' onClick={()=>{verifyForm()}}>Next Step</button>}
               {formSteps===4 && <button type='submit'>Confirm</button>}
