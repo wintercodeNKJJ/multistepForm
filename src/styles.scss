@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 .layout{
   @apply max-w-[900px] h-[590px] mx-auto my-[70px];
 }
