@@ -1,0 +1,365 @@
+.layout{
+  @apply max-w-[900px] h-[590px] mx-auto my-[70px];
+}
+
+.app{
+  @apply w-full flex flex-col h-[100vh] justify-center items-center bg-[#EEF5FF]
+}
+
+.form-block{
+  @apply bg-white flex p-3 gap-4 rounded-xl h-full;
+}
+
+aside{
+  @apply w-[270px] p-6 rounded-lg;
+  background-image: url('./task/assets/images/bg-sidebar-desktop.svg');
+  color: white;
+}
+
+main{
+  @apply py-8 px-[0rem] w-[650px]
+}
+
+.steps-block{
+ @apply flex flex-col justify-center gap-4 items-center;
+}
+
+.steps{
+  @apply flex  w-full gap-2 items-center;
+  div h2{
+    @apply font-bold
+  }
+  
+  i{
+    @apply py-1 not-italic font-bold
+  }
+  
+  // div h2{
+  //   letter-spacing: 1px;
+  // }
+}
+
+h3{
+  line-height: 1rem;
+  font-family: Ubuntu-bold;
+  font-size: 0.8rem;
+  color: #B7B4FF;
+}
+
+.steps-num{
+  @apply rounded-full text-sm w-8 h-8 text-center;
+  border: solid 1.5px white;
+}
+
+form{
+  @apply flex flex-col justify-between h-full items-center
+}
+
+.buttons{
+  @apply flex w-[450px] justify-between;
+  .backward{
+    color: #A8A9AF;
+  }
+  .backward:hover{
+    color: #021F50;
+    font-weight: 700;
+  }
+  .foward{
+    button{
+      @apply px-6 py-3 rounded-lg;
+      background-color: #473EFF;
+      color: white;
+    }
+    button:hover:not(next-btn){
+      background-color: #483eff67;
+    }
+    .next-btn{
+      background-color: #03295A;
+    }
+    .next-btn:hover{
+      background-color: #03295a7e;
+    }
+  }
+}
+
+label{
+  font-family: Ubuntu-medium
+}
+
+section{
+  @apply flex flex-col w-[450px];
+  h1:nth-child(1){
+    font-size: 2.1rem;
+    font-weight: 700;
+    font-family: Ubuntu-bold;
+  }
+  .p-text{
+    color:#A8A9AF;
+    @apply pb-[30px]
+  }
+  .inputs{
+    @apply flex flex-col gap-6
+  }
+}
+
+.labelsM{
+  @apply flex justify-between w-full;
+}
+.error{
+  color: red;
+  border-color: red !important;
+}
+
+.input-group{
+  @apply flex flex-col gap-1;
+  input{
+    @apply border-[1px] border-[#A8A9AF] p-2 px-4 rounded-lg;
+  }
+}
+
+.plans{
+  @apply flex flex-row gap-4;
+}
+
+.plan{
+  @apply w-1/3 rounded-lg h-fit p-4 flex flex-col gap-10 justify-between;
+  border: solid 1px #A8A9AF;
+  .title{
+    color: #021F50;
+    font-family: Ubuntu-bold;
+  }
+  .amount{
+    color: #A8A9AF;
+  }
+  .bonus{
+    color: #021F50;
+    font-weight: 700;
+    font-size: small;
+  }
+
+}
+
+.period{
+  @apply flex justify-center gap-8 w-full my-8 p-4 rounded-lg;
+  background: #F8F9FE;
+  font-family: Ubuntu-bold;
+  color: #021F50;
+  cursor: pointer;
+}
+.fade{
+  color: #A8A9AF;
+}
+
+.period-select{
+  @apply rounded-full w-10 flex items-center px-[2px];
+  transition-duration: 500ms;
+  background-color: #021F50;
+  .dot{
+    @apply bg-white w-5 h-5 rounded-full;
+  }
+}
+
+.selected-plan{
+  border:solid 2px #544D94 !important;
+  background-color: #F8F9FE;
+}
+
+.plan:hover{  
+  border:solid 2px #544D94;
+}
+
+.addon{
+  @apply flex flex-col gap-3;
+}
+
+.addon-item{
+  @apply flex w-full items-center rounded-lg py-3;
+  border: solid 1px #A8A9AF;
+  .check{
+    width: 15%;
+    @apply flex justify-center;
+    input{
+      @apply h-[1rem] w-[1rem];
+    }
+    input[type="checkbox"]:checked{
+      background-color: #021F50 !important;
+    }
+  }
+  .addon-content{
+    width: 70%;
+    h1{
+      font-size: large !important;
+    }
+    p{
+      color: #A8A9AF
+    }
+  }
+  .addon-price{
+    @apply flex justify-center mx-4;
+    width: 15%;
+    color: #021F50;
+    font-size: small;
+    font-weight: 700;
+  }
+}
+
+.wrap{
+  @apply flex flex-col px-6 p-4 rounded-lg;
+  background: #F8F9FE;
+  .wrap-top{
+    @apply flex justify-between items-center pb-4;
+    border-bottom: solid 1px #E7E8ED ;
+    h1{
+      font-size: 1.1rem; 
+    }
+    .wrap-top-price{
+      font-size: small;
+      font-weight: 700;
+    }
+    .wrap-top-cont p{
+      color: #A8A9AF;
+    }
+  }
+  .wrap-middle{
+    @apply pt-4 flex flex-col gap-2;
+    .wrap-middle-cont{
+      @apply flex justify-between;
+      p:nth-child(1){
+        color:#A8A9AF;
+      }
+      p:nth-child(2){
+        font-size: small;
+      }
+    }
+  }
+}
+
+.active{
+  background: #BBE1FE;
+  color: black;
+}
+
+.wrap-total{
+  @apply flex justify-between p-4;
+  h3{
+    font-size: larger;
+    color: #473EFF;
+  }
+  p{
+    color: #A8A9AF;
+  }
+}
+
+.change-plan{
+  cursor: pointer;
+}
+
+.thanks{
+  @apply flex flex-col justify-center items-center h-full gap-4
+}
+.thanks-title{
+  font-size: 2.1rem;
+  font-weight: 700;
+  font-family: Ubuntu-bold;
+  text-align: center;
+  margin-top: 1rem;
+}
+.thanks-message{
+  text-align: center;
+  color:#A8A9AF;
+  @apply pb-[30px]
+}
+
+@media only screen and (max-width:375px) {
+  .layout{
+    @apply w-full h-full m-0 bg-transparent;
+    position: relative;
+  }
+  .form-block{
+    @apply p-0 w-full h-full flex-col bg-transparent
+  }
+  aside{
+    @apply w-full absolute h-[170px] top-0 rounded-none;
+    background-image: url('./task/assets/images/bg-sidebar-mobile.svg');
+    .steps-block{
+      @apply flex-row gap-[1.2rem] my-2 justify-center;
+      .steps{
+        @apply w-fit;
+        div{
+          @apply hidden
+        }
+      }
+    }
+  }
+  main{
+    @apply w-full h-full px-6 bg-transparent relative;
+    section{
+      @apply w-full;
+      h1{
+        font-size: 1.5rem !important
+      }
+    }
+  }
+
+  form{
+    @apply bg-white rounded-lg p-6 z-10 h-fit  mt-[4.2rem];
+
+    box-shadow: 0px 10px 70px rgba(36, 36, 36, 0.127)
+  }
+
+  .period{
+    @apply mt-3 mb-0
+  }
+
+  .plans{
+    @apply flex-col gap-2;
+    .plan{
+      @apply flex-row w-full justify-start gap-3;
+    }
+  }
+
+  .addon{
+    font-size: small;
+    .addon-item{
+      .addon-content{
+        p{
+          font-size: 0.75rem !important
+        }
+        h1{
+          font-size: 0.9rem !important;
+        }
+      }
+    }
+    .addon-price{
+      width: 10%;
+      margin-right: 1.1rem
+    }
+  }
+
+  .wrap{
+    .wrap-top .wrap-top-cont{
+      h1,p{
+        font-size: 0.9rem !important
+      }
+    }
+    .wrap-middle .wrap-middle-cont p:nth-child(1){
+      font-size: 0.9rem
+    }
+  }
+  .wrap-total{
+    p{
+      font-size: 0.9rem
+    }
+    h3{
+      font-size: 1rem
+    }
+  }
+
+  .thanks{
+    @apply my-[3rem]
+  }
+
+  .buttons{
+    @apply w-full absolute bottom-0 p-4 bg-white;
+  }
+}

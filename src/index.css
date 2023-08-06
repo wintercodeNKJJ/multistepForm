@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Ubuntu-bold;
+  src: url('./task/assets/fonts/Ubuntu-Bold.ttf');
+}
+
+@font-face {
+  font-family: Ubuntu-medium;
+  src: url('./task/assets/fonts/Ubuntu-Medium.ttf');
+}
+
+@font-face {
+  font-family: Ubuntu-regular;
+  src: url('./task/assets/fonts/Ubuntu-Regular.ttf');
+}
+
+
+body{
+  font-size: 16px;
+  font-family: Ubuntu-regular;
+}
+
